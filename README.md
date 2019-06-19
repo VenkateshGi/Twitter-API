@@ -1,2 +1,8 @@
 # Twitter-API
-Gathering All Public Tweets with mentioning @localPolice in their tweets. Use Case : People usually tweet their problem with @Police . This tweet can only be seen by mentioned Police. In order to know about this issue to everyone, so that anyone can help, I developed a script which develops excel sheet with tweet details in it.
+Steps for accessing Twitter Data:
+1. Register for Twitter Account.
+2. Log into Twitter Developer Account and create New APP.
+3. Fill the necessary details in order to get the Client_key, Client Secret Key.
+4. Once you have the necessary keys, you can develop the script for searching the tweets, writing a tweet etc.
+5. In this repository, I have used Twitter Search API and searched the tweets that consists of Indian Police Twitter Accounts. 
+6. I would like to know the emotions of those tweets and would like to develop sentiment analysis on those tweets.
