@@ -93,12 +93,12 @@ class Twitter():
 item = Twitter()
 print(item.get_token())
 
-metro_polices = ["@DelhiPolice","@BlrCityPolice","@KolkataPolice","@HYDTraffic","@blrcitytraffic","@CCTPolice_Alert","@hydcitypolice","@dtptraffic","@MumbaiPolice","@jaipur_police","@TheKeralaPolice"]
+metro_police = ["@DelhiPolice","@BlrCityPolice","@KolkataPolice","@HYDTraffic","@blrcitytraffic","@CCTPolice_Alert","@hydcitypolice","@dtptraffic","@MumbaiPolice","@jaipur_police","@TheKeralaPolice"]
 city_police = ["Delhi","Bengaluru","Kolkata","Hyderabad","Bengaluru","Chennai","Hyderabad","Delhi","Mumbai","jaipur","kerala"]
 from pprint import pprint
 #[pprint(item["text"]) for item in police["statuses"]]
 public_requests_police = pd.DataFrame()
-for index,search_query in enumerate(metro_polices):
+for index,search_query in enumerate(metro_police):
 	police = item.search_request(search_query, count = 500).json()
 	rows = []
 	
