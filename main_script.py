@@ -2,6 +2,7 @@ import base64
 import pandas as pd
 import requests
 
+#extracting hashtags from given JSON file
 def get_hashtags(user):
 	hashtag1 = []
 	
@@ -9,7 +10,8 @@ def get_hashtags(user):
 	if "retweeted_status" in user:
 		hashtag1.extend([item["text"] for item in user["retweeted_status"]["entities"]["hashtags"]])
 	return list(set(hashtag1))
-	
+
+#extracting user mentions from the given JSON file
 def get_user_mentions(user):
 	user_mentions = []
 	
@@ -28,18 +30,20 @@ def get_mentioned_urls(user):
 		urls.extend([item["expanded_url"] for item in user["retweeted_status"]["entities"]["media"]])
 	return list(set(urls))
 
-
+#getting date format from date
 def get_date_format(date):
 	date = date.split()
 	date = date[1:3]+date[-1:]
 	print("date : " + str(date))
 	return "-".join(date)
-	
+
+#getting time format from time
 def get_time_format(time):
 	time = time.split()
 	print("time : " + time[3])
 	return time[3]
-	
+
+#defining a class
 class Twitter():
 	token = "-1"
 	base_url = 'https://api.twitter.com/'
