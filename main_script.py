@@ -100,7 +100,7 @@ print(item.get_token())
 metro_police = ["@DelhiPolice","@BlrCityPolice","@KolkataPolice","@HYDTraffic","@blrcitytraffic","@CCTPolice_Alert","@hydcitypolice","@dtptraffic","@MumbaiPolice","@jaipur_police","@TheKeralaPolice"]
 city_police = ["Delhi","Bengaluru","Kolkata","Hyderabad","Bengaluru","Chennai","Hyderabad","Delhi","Mumbai","jaipur","kerala"]
 from pprint import pprint
-#[pprint(item["text"]) for item in police["statuses"]]
+[pprint(item["text"]) for item in police["statuses"]]
 public_requests_police = pd.DataFrame()
 for index,search_query in enumerate(metro_police):
 	police = item.search_request(search_query, count = 500).json()
@@ -111,7 +111,7 @@ for index,search_query in enumerate(metro_police):
 		print("User Description : "+user["user"]["description"])
 		print("User Name : "+user["user"]["name"])
 		print("Twitter Name : "+user["user"]["screen_name"])
-		#print("profile URL : "+user["user"]["url"])
+		print("profile URL : "+user["user"]["url"])
 		print("Tweet Text : "+user["full_text"])
 		print("Link to tweet : https://twitter.com/statuses/"+user["id_str"])
 		print("*****************")
@@ -129,7 +129,7 @@ for index,search_query in enumerate(metro_police):
 
 	tweets = pd.DataFrame(rows,columns = ["User_Name", "Twitter_Name","Location", "Bio", "Tweet","city_police","media","Language","Tweet_Link",\
 	"is_Retweeted","Original_Tweet_by","Hashtags","User_Mentions","tweet_date","tweet_time"])
-	#print(rows)
+	print(rows)
 	public_requests_police = public_requests_police.append(tweets,ignore_index = True)
 	tweets.to_excel(search_query+".xlsx")
 	pprint(police)	
